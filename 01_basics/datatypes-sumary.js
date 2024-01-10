@@ -43,3 +43,30 @@ const myfunc = function(){
 // console.log(typeof user1); // object
 // console.log(typeof myfunc); // function .. it is also Functionobject, only prints function
 // JS is dynamically typed as opposed to static type.
+
+
+//*********************************************************************
+
+/** Memories: Stack(Primitive) copy, heap(non - primitive)  reference*/
+
+let myYoutubeName = "mi8guy"  // Goes into stack
+
+let anotherName = myYoutubeName // gives a copy 
+ 
+anotherName = "chaiaurcode" // does not change the original value
+
+console.log(anotherName); // chaiaurcode
+console.log(myYoutubeName); // mi8guy
+
+
+let userOne = { // Goes into heap
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let user2 = userOne // gives a reference
+
+user2.email = "user2@fb.com" // Changes the original value due to a reference being passed
+
+console.log(user2.email);  // user2@fb.com
+console.log(userOne.email); // user2@fb.com
