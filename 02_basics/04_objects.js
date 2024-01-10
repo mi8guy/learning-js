@@ -63,10 +63,41 @@ const users = [
     },
 ]
 
-users[1].email
-console.log(tinderUser)
-console.log(Object.keys(tinderUser)); // ouput keys in an Array 
-console.log(Object.values(tinderUser)); // ouput values in an Array 
-console.log(Object.entries(tinderUser)); // Array ke andar array milta hai key value ka
+// users[1].email
+// console.log(tinderUser)
+// console.log(Object.keys(tinderUser)); // ouput keys in an Array 
+// console.log(Object.values(tinderUser)); // ouput values in an Array 
+// console.log(Object.entries(tinderUser)); // Array ke andar array milta hai key value ka
 
-console.log(tinderUser.hasOwnProperty('isLogged')); 
+// console.log(tinderUser.hasOwnProperty('isLogged')); 
+
+//Destructuring
+
+const course = {
+    coursename: "js in hindi",
+    price: 999,
+    courseInstructor: "hitesh",
+}
+
+const {courseInstructor: instructor} = course // Object destructuring also renaming.
+
+console.log(instructor)
+
+/**
+  Destructuring in react components.
+   const navbar = ({company}) => {
+    }
+    navbar(company = "hitesh")
+*/
+
+// API === Menu card in restaurants
+
+//JSON
+/*
+{
+    name: "Hitesh",
+    coursename: "js in hindi",
+    price: "free"
+
+}
+*/
