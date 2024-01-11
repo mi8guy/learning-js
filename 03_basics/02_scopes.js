@@ -42,3 +42,61 @@ if(true){ // block scope
 
 // scope is different in Browsers and node. In browsers it is core scope and in Node, global scope is different
 
+
+// Nested scope
+
+function one(){
+    const username = "hitesh"
+
+    function two(){
+        const website = "youtube"
+        console.log(username); // can we access username in this inner function, yes
+    }
+
+    // console.log(website); // website not defined, not in this scope.
+
+    two() //never reached because of above error.
+
+}
+
+// one()
+
+/**
+ * Whenever you declare a function and call it, a seperate call stack, a seperate scope is created for it.
+ * isi ko hi kaafi hadd tak closure kaha jaata hai ki andar ka function baahar ke variables ko access kar pata hai par isme aur bhi hai bas itna nahi.
+ */
+
+if(true){
+    const username = "hitesh"
+    if(username == "hitesh"){
+        const website = " youtube"
+        // console.log(username + website);
+    }
+    // console.log(website); // error: out of scope
+}
+
+// console.log(username); // error: out of scope
+
+
+//***************************Interesting *********************************/
+
+//one way
+
+console.log(addOne(5)) // before function definition, it runs
+
+function addOne(num){
+    return num + 1
+}
+
+
+// another way, aka function expression
+
+addTwo(5) // here, cannot access before initialization
+const addTwo = function(num){
+    return num + 2
+}
+
+/*************************************************************************/
+
+
+
