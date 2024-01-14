@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
 </head>
-<body>
-    <div class="bg-black">
-        <h1 class="heading">DOM learning  on chai aur code</h1>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning  on chai aur code <span style="display:none;">test text</span></h1>
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
 </body>
@@ -18,3 +23,32 @@
 By doing. console.log(window.document) and console.log(document) notice the differences.
 
 Manipulated some text using document.getElementById().innerHTML = "<h1>chai aur code</h1>" -->
+
+<!-- Talk about document.getElementById("title").id/className/getAttribut("class/id")
+
+setAttribute('class', 'test') --- overwrites previous attribute. Specify old ones as well to preserve.
+
+const title = document.getElementById('title')
+title.style.backgroundColor = 'green' etc
+title.style.padding = '10px' etc
+title.style.borderRadius = '15px' etc
+
+// adding content
+grabbing values
+1. title.textContent // shows hidden span text as well 
+2. title.innerHTML  // show all html 
+3. title.innerText  // does not show hidden span text
+
+// querySelectors
+1. document.getElementById
+1. document.getElementByClassName
+1. document.querySelector('h1')  #id / .className   // first h1 on the page
+1. document.querySelectorAll('h1')     // All h1 on the page
+
+
+NodeList and HTMLCollection are different than arrays.
+Nodelist has a forEach which can be used to alter elements
+
+For HTMLcollection you need to convert to array by doing  Array.from(htmlcollection)
+
+-->
