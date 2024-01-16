@@ -21,7 +21,8 @@
 				"esbenp.prettier-vscode",
 				"vscode-icons-team.vscode-icons",
 				"wayou.vscode-todo-highlight",
-				"ritwickdey.LiveServer"
+				"ritwickdey.LiveServer",
+				"jzmstrjp.color-the-tag-name"
 			],
 			"settings": {
 				"editor.fontSize": 18,
