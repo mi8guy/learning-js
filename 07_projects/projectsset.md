@@ -164,3 +164,66 @@ function newGame() {
 }
 
 ```
+
+
+## project 5
+
+```javascript
+const insert = document.querySelector('#insert');
+
+window.addEventListener('keydown', (e) => {
+  insert.innerHTML = `
+  <div class = "color">
+  <table>
+    <thead>
+      <th> Key
+      <th> Keycode
+      <th> Code
+    </thead> 
+    <tr>  
+      <td>${e.key === ' ' ? 'Space' : e.key}
+      <td>${e.keyCode}
+      <td>${e.code}
+    </tr>
+  </table> 
+  </div>
+  `;
+});
+
+```
+
+## project 6
+
+```javascript
+const randomColor = function () {
+  let color = '#';
+  const hex = '0123456789ABCDEF';
+
+  for (let i = 0; i < 6; i++) {
+    let randomIndex = Math.floor(Math.random() * 16);
+    color += hex[randomIndex];
+  }
+
+  return color;
+};
+
+let intervalId;
+const startChangingColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+```
