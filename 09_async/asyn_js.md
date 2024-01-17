@@ -40,6 +40,14 @@ We also know that we have a call stack and memory heap
   Now if we use Non- blocking code we will notify the user before fully writing to the DB. It might so happen that the DB write failed but we have already notified the user about successful register.  
   So in such a case, a Blocking code is a better choice.  
 
+<br>
+
+--- 
+
+<br>
+
+![Even loop](Event-loop.png)**Event - Loop**  
+
 
 
 
