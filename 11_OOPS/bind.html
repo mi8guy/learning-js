@@ -1,0 +1,47 @@
+<!-- 
+    Early days of react, dot version days. There wasn't much abstraction.
+    How was work done during those time?
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:3000"
+
+            // requirement: 
+            /**
+             * get reference of that button
+             * method to handleClick that gives some message.
+            */
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+        }
+
+      
+
+        
+        handleClick(){
+            console.log("Button clicked")
+            console.log(this.server) // see if i can access this. The reference seems to be lost. Lets see by logging `this`
+            console.log(this) // The reference is available, but it is of the `<button>`
+            //we need to bind the reference of the class so that it has accesss to class variables.
+            
+            // This is not needed is modern codebases. Might find in legacy codebases.
+        }
+    }
+
+    const app = new React()
+</script>
+</html> 
