@@ -1,0 +1,107 @@
+<!-- 
+   A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. 
+   
+   In JavaScript, closures are created every time a function is created, at function creation time. // creation time is interesting.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai </title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function init() {
+    //     let name = "Mozilla"; 
+
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+
+    //     displayName();
+    // }
+
+    // init();
+
+    // Lexical scoping
+
+    // function outer(){
+    //     let userName = "hitesh"
+    //     // console.log(secret) // secret not defined
+    //     function inner(){
+    //         let secret = "123"
+    //         console.log("Inner: ", userName) // available
+    //     }
+    //     function innerTwo(){
+    //         // console.log(secret) // refError : Sibling functions stuff not available.
+    //         console.log("Inner: ", userName) // available
+    //     }
+    //     inner()
+    //     innerTwo()
+    // }
+    // outer()
+    // console.log("TOO OUTER: ", userName) // referenceError, outers stuff is not available
+
+
+    /***
+     * Inner functions withing a functions have access to that functions variables. This is lexical scoping. 
+     */
+
+    //Closure
+
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName; // returned  a reference of Inner function. Not just displayName, if any outer function exits, its scope will also be given due to lexical scoping.
+    //     // SO whole lexical scope is given and not just its context.
+    // }
+
+    // const myFunc = makeFunc(); // makeFunc() is executed. and therefore context is removed from the stack and thereby displayName is also gone.
+    // myFunc(); // now name could be displayed. 
+
+
+</script>
+ 
+<script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    // what if there are 500 buttons?
+
+    // function clickHandler(color){
+    //     document.body.style.backgroundColor = `${color}`
+    // }
+
+    // document.getElementById('orange').onclick = clickHandler // function reference is given.
+
+    // document.getElementById('orange').onclick = clickHandler("orange") // This executed directly.
+
+    // document.getElementById('green').onclick = clickHandler("green") // This executed directly.
+
+    // We need to change the definition. We need to write a function within.
+
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange") // Now it returned a function with a lexical scope that has access to color
+
+    document.getElementById('green').onclick = clickHandler("green") // Now it returned a function with a lexical scope that has access to color
+
+
+</script>
+</html>
