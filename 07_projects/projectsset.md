@@ -1,7 +1,9 @@
 # Projects related to DOM
 
 ## project links
-[Click here](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
+[Hitesh Choudhary](https://stackblitz.com/edit/dom-project-chaiaurcode?file=index.html)
+
+[My stackblitz](https://stackblitz.com/@mi8guy) 
 
 # Solution code
 
