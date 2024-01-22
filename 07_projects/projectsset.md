@@ -5,7 +5,7 @@
 
 # Solution code
 
-## project 1
+## project 1 -- Background color changer
 
 ```javascript
 const buttons = document.querySelectorAll('.button')
@@ -21,7 +21,7 @@ buttons.forEach(function(button){
 })
 ```
 
-## project 2
+## project 2 -- BMI calculator
 
 ```javascript
 const form = document.querySelector("form")
@@ -54,7 +54,7 @@ form.addEventListener("submit", function(e){
 })
 ```
 
-## project 3 
+## project 3  -- clock
 
 ```javascript
 const clock = document.getElementById('clock');
@@ -66,7 +66,7 @@ setInterval(function () {
 
 ```
 
-## project 4
+## project 4 -- random number guesser
 
 ```javascript
 let randomNumber = parseInt(Math.random() * 100 + 1);
@@ -166,7 +166,7 @@ function newGame() {
 ```
 
 
-## project 5
+## project 5  -- key tracker
 
 ```javascript
 const insert = document.querySelector('#insert');
@@ -192,7 +192,7 @@ window.addEventListener('keydown', (e) => {
 
 ```
 
-## project 6
+## project 6 -- random color 
 
 ```javascript
 const randomColor = function () {
@@ -225,5 +225,33 @@ const stopChangingColor = function () {
 
 document.querySelector('#start').addEventListener('click', startChangingColor);
 document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+```
+
+## project 7  -- todo list
+```javascript
+
+const input = document.querySelector('#entry');
+const submit = document.querySelector('#subt');
+const ul = document.querySelector('#todolist');
+
+submit.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (input.value !== '') {
+    let li = document.createElement('li');
+    li.classList.add('list-item');
+    li.textContent = input.value;
+    ul.prepend(li);
+    input.value = '';
+  }
+});
+
+ul.addEventListener('click', function (e) {
+  if (e.target && e.target.matches('li.list-item')) {
+    let li = e.target;
+    // console.log(li)
+    ul.removeChild(li);
+  }
+});
 
 ```
