@@ -257,3 +257,72 @@ ul.addEventListener('click', function (e) {
 });
 
 ```
+
+## project 7b -- persisting todos with localStorage
+```javascript
+const input = document.querySelector('#entry');
+const submit = document.querySelector('#subt');
+const ul = document.querySelector('#todolist');
+listTodos();
+submit.addEventListener('click', addTodo);
+ul.addEventListener('click', removeTodo);
+
+function addTodo(e) {
+  e.preventDefault();
+  if (input.value !== '') {
+    setTodo(input.value);
+    input.value = '';
+  }
+  listTodos();
+}
+
+function removeTodo(e) {
+  if (e.target && e.target.matches('li.list-item')) {
+    let li = e.target;
+    let value = li.textContent;
+    ul.removeChild(li);
+    let todos = getTodo();
+    if (todos) {
+      todos = todos.filter((todo) => todo.trim() != value.trim());
+    }
+    localStorage.setItem('todos', JSON.stringify(todos));
+    listTodos();
+  }
+}
+
+function getTodo() {
+  let todos = JSON.parse(localStorage.getItem('todos'));
+  return todos;
+}
+
+function setTodo(todo) {
+  const todos = getTodo();
+  if (todos) {
+    todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  } else {
+    const todos = [];
+    todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+}
+
+function listTodos() {
+  clearList();
+  const todos = getTodo();
+  if (todos) {
+    todos.forEach((todo) => {
+      let li = document.createElement('li');
+      li.classList.add('list-item');
+      li.textContent = todo;
+      ul.prepend(li);
+    });
+  }
+}
+
+function clearList() {
+  while (ul.firstChild) {
+    ul.removeChild(ul.firstChild);
+  }
+}
+```
