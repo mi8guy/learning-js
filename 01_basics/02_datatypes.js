@@ -35,7 +35,7 @@ let temperature = null
 // undefined => this is a value, type of undefined is undefined itself.
 let state 
 
-// symbol  => unique, used for uniqueness
+// Datatype: symbol  => unique, used for uniqueness
 
 //object
 
