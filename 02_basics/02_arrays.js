@@ -23,6 +23,9 @@ const dc_heroes = ["Batman", "Superman", "Flash"]
 // console.log(Array.from("Hitesh")) // makes into array
 
 // console.log(Array.from({name: "hitesh"})) // [] interesting. Keys or values need to be specified
+// By using Object.keys({name: "hitesh"})
+// console.log(Object.values({name:"a"}))
+
 
 let score1 = 100
 let score2 = 200
