@@ -51,7 +51,7 @@ let str3 = str1 + str2
 // console.log("1" + 2 + 2) // 122 String first so string all.
 // console.log(1 + 2 + "2") // 32 String last so all operations happen
 
-// console.log(3 + 4 * 5 % 3); // bad code. use paranthesis.
+// console.log(3 + 4 * 5 % 3); // 5. bad code. use paranthesis.
 
 // bad conversion operations. Confusing, misleading
 // console.log(+true);
